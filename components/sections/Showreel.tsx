@@ -54,15 +54,17 @@ export default function Showreel() {
         </p>
       </div>
 
-      <Lightbox open={open} onClose={() => setOpen(false)}>
-        <div className="flex aspect-video w-[min(90vw,64rem)] items-center justify-center rounded-2xl bg-black">
-          {/* Až budete mít reálné video, nahraďte tento div tagem:
-              <video controls autoPlay src="/videos/showreel.mp4" className="h-full w-full rounded-2xl" /> */}
-          <p className="p-10 text-center text-white/50">
-            Sem přijde přehrávač showreelu (/videos/showreel.mp4).
-          </p>
-        </div>
-      </Lightbox>
+     <Lightbox open={open} onClose={() => setOpen(false)}>
+  <video
+    controls
+    autoPlay
+    playsInline
+    className="h-full w-[min(90vw,64rem)] rounded-2xl"
+  >
+    <source src="/videos/showreel.mp4" type="video/mp4" />
+    Váš prohlížeč nepodporuje video.
+  </video>
+</Lightbox>
     </section>
   )
 }
